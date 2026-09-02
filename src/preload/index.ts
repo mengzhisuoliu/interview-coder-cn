@@ -5,6 +5,8 @@ import type { AppState } from '../main/state'
 
 // Custom APIs for renderer
 const api = {
+  // Get the installed app version (package.json version at build time)
+  getAppVersion: () => ipcRenderer.invoke('getAppVersion') as Promise<string>,
   // Get app settings
   getAppSettings: () => ipcRenderer.invoke('getAppSettings'),
   // Update app settings

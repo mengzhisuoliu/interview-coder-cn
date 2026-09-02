@@ -1,6 +1,10 @@
 import { app, dialog, ipcMain } from 'electron'
 import { setToolbarOpacity, syncToolbarSettings } from './toolbar-window'
 
+ipcMain.handle('getAppVersion', () => {
+  return app.getVersion()
+})
+
 ipcMain.handle('getAppSettings', () => {
   return settings
 })
